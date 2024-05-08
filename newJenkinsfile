@@ -8,7 +8,7 @@ pipeline{
     stages{
         stage("Name"){
             steps{
-                echo " Enter your name: ${Your_name} \n"
+                echo "Enter your name: ${Your_name}"
             }
         }
         stage("Marks"){
