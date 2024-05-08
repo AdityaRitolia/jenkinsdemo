@@ -2,7 +2,7 @@ pipeline{
     agent any
     parameters{
         booleanParam(name: "wanna_give", deafultValue: false, description: "Want to give input")
-        string(name: "Your_name", deafultValue: "Not given" description: "Enter your name")
+        string(name: "Your_name", deafultValue: "Not given", description: "Enter your name")
         choice(choices:["80","90","100"], description: "Enter your marks", name: "marks")
     }
     stages{
