@@ -12,12 +12,16 @@ pipeline{
       }
     }
     stage("Build"){
-      dir("jenkinsdemo")
-      sh "clean install"
+      steps{
+        dir("jenkinsdemo")
+        sh "clean install"
+      }
     }
     stage("Test"){
-      dir("jenkinsdemo")
-      sh "test"
+      steps{
+        dir("jenkinsdemo")
+        sh "test"
+      }
     }
   }
 }
