@@ -14,14 +14,14 @@ pipeline{
     stage("Build"){
       steps{
         dir("jenkinsdemo"){
-          sh "clean install"
+          sh "mvn clean install"
         }
       }
     }
     stage("Test"){
       steps{
         dir("jenkinsdemo"){
-          sh "test"
+          sh "mvn test"
         }
       }
     }
