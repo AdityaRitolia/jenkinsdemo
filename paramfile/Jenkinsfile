@@ -1,0 +1,25 @@
+pipeline{
+    agent any
+    parameters{
+        booleanParam(name: "wanna_give", deafultValue: false, description: "Want to give input")
+        string(name: "Your_name", deafultValue: "Not given" description: "Enter your name")
+        choice(choices:["80","90","100"], description: "Enter your marks", name: "marks")
+    }
+    stages{
+        stage("Name"){
+            steps{
+                echo "Enter your name: ${Your_name}"
+            }
+        }
+        stage("Marks"){
+            steps{
+                echo "Choose your marks: ${marks}"
+            }
+        }
+        stage("Wanna_give"){
+            steps{
+                echo "Want to give or not: ${wanna_give}"
+            }
+        }
+    }
+}
