@@ -1,10 +1,23 @@
 pipeline{
   agent any
   stages{
-    stage("Hello"){
+    stage("Clean up"){
       steps{
-        echo "Hello World"
-          }
+        deleteDir();
       }
+    }
+    stage("Clone Repo"){
+      steps{
+        sh "git clone https://github.com/AdityaRitolia/jenkinsdemo.git"
+      }
+    }
+    stage("Build"){
+      dir("jenkinsdemo")
+      sh "clean install"
+    }
+    stage("Test"){
+      dir("jenkinsdemo")
+      sh "test"
+    }
   }
 }
